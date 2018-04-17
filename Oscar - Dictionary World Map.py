@@ -87,10 +87,10 @@ world_map = {
     'CAVERNHALLWAYWEST': {
         'NAME': 'Cavern Hallway',
         'DESCRIPTION': "You head west you hear the singing getting louder you make it to a door were you see a little"
-                       "girl standing in an emtey room singing you notice huge claw markes on the walls ten feet high"
+                       "girl standing in an empty room singing you notice huge claw marks on the walls ten feet high"
                        "the little girl spots you the door closes behind you.",
         'PATHS': {
-        },     'NORTH': 'EMTYROOMNORTH',
+        },     'NORTH': 'EMPTYROOMNORTH',
     },
     'CAVERNHALLWAYEAST': {
         'NAME': 'Cavern Hallway',
@@ -100,31 +100,31 @@ world_map = {
         'PATHS': {
         },   'WEST': 'CAVERNHALLWAYWEST',
     },
-    'EMTEYROOMNORTH': {
-        'NAME': 'Emety Room Exit',
+    'EMPTYROOMNORTH': {
+        'NAME': 'Empty Room Exit',
         'DESCRIPTION': "You feel scared realizing that you made it out alive and being scared on what comes next in"
                        "this deadly cavern that you don't think you will escape to the east is another hallway you have"
                        "a feeling of regret.",
         'PATHS': {
         }, 'WEST': 'CAVERNHALLWAYWEST2',
     },
-    'CAVERNHALLEAST': {
+    'CAVERNHALLWEST2': {
         'NAME': 'Cavern Hallway',
         'DESCRIPTION': "You walk down the hallway you start to feel very sick and having the feeling that the hallway"
                        "is getting long with each step you take you feel sharp pain on your right shoulder you pull up "
                        "your sleave to check its a huge sting mark you realize that its from the monster you fought two"
                        "minutes ago you pass out from the pain",
         'PATHS': {
-        }, 'WEST': 'CAVERNHALLWAY3',
+        }, 'WEST': 'CAVERNHALLWAY',
     },
-    'CAVERNHALLWAY3': {
+    'CAVERNHALLWAY': {
         'NAME': 'Cavern Hallway',
         'DESCRIPTION': "You wake up feeling very light headed you take a look at you right shoulder seeing that it"
                        "still has the sting mark form that monster you question yourself for a second saying how did"
                        "i get on this island anyway you stand up having the determination you will make it off the"
                        "island",
         'PATHS': {
-        }, 'EAST': 'CAVERNINTERSECTION',
+        }, 'EAST': 'CAVERNINTSECTION',
     },
 
 },

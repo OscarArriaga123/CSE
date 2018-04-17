@@ -1,10 +1,10 @@
 class Item(object):
-    def __init__(self, weapon, consumable, armor, misis, name):
+    def __init__(self, weapon, consumable, armor, micis, name):
         self.name = name
         self.weapon = weapon
         self.consumable = consumable
         self.armor = armor
-        self.misis = misis
+        self.micis = micis
 
 
 class Weapon(Item):
