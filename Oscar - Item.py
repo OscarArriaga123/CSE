@@ -77,11 +77,38 @@ class Meat(Consumable):
                 
 class Speedpot(Consumable):
     def __init__(self, Stamina):
-        super(Speedpot, self).__init__(Stamina, Speedpot)
+        super(Speedpot, self).__init__(Stamina, Speedpot,)
         if self.Stamina < 20:
             print("You drink the potion your hands start to vibrate rapidly you feel you can outrun a lighting bolt")
             
             
 class Strengthpot(Consumable):
+    def __init__(self, CarryMoreWeapons,):
+        super(Strengthpot, self).__init__("Maxhealth", "Stamina",)
+        self.CarryMoreWeapons = CarryMoreWeapons
+        if self.MaxHealth < 50:
+            if self.CarryMoreWeapons < 2:
+                if self.Stamina < 2:
+                    print("You drink the potion you fall to your kneels from a surging pain coming from your hart you"
+                          "wait until the pain goes away then you feel strong like you can lift the world")
+
+
+class armor(Item):
+    def __init__(self, heavyarmor, lightarmor, durability, enchantment, heavyenchantment, slowmovement, fastmovement,
+                 armor,):
+        self.heavyarmor = heavyarmor
+        self.lightarmor = lightarmor
+        self.durability = durability
+        self.enchantment = enchantment
+        self.heavyenchantment = heavyenchantment
+        self.slowmovement = slowmovement
+        self.fastmovement = fastmovement
+        super(armor, self).__init__()
+        
+
+class heavyarmor(armor):
     def __init__(self):
-        super(Strengthpot, self).__init__()
+        super(heavyarmor, self).__init__(enchantment, heavyenchantment, slowmovement, durability,)
+        if self.durability < 100:
+            
+    
