@@ -4,7 +4,6 @@ class Item(object):
         self.weapon = weapon
         self.consumable = consumable
         self.armor = armor
-        self.micis = micis
 
 
 class Weapon(Item):
@@ -96,6 +95,7 @@ class Strengthpot(Consumable):
 class armor(Item):
     def __init__(self, heavyarmor, lightarmor, durability, enchantment, heavyenchantment, slowmovement, fastmovement,
                  armor,):
+        super(armor, self).__init__()
         self.heavyarmor = heavyarmor
         self.lightarmor = lightarmor
         self.durability = durability
@@ -103,12 +103,36 @@ class armor(Item):
         self.heavyenchantment = heavyenchantment
         self.slowmovement = slowmovement
         self.fastmovement = fastmovement
-        super(armor, self).__init__()
         
 
 class heavyarmor(armor):
-    def __init__(self):
+    def __init__(self, enchantment, heavyenchantment, slowmovement, durability,):
         super(heavyarmor, self).__init__(enchantment, heavyenchantment, slowmovement, durability,)
         if self.durability < 100:
-            
-    
+            if self.slowmovement < 50:
+                print("You put on the heavy armor when you take your first step it's slow and heavy but you feel while"
+                      "protected.")
+
+
+class enchant(heavyarmor):
+    def __init__(self, enchantment, heavyenchantment, durability, slowmovement,):
+        super(enchant, self).__init__(enchantment, heavyenchantment, durability, slowmovement,)
+        if self.enchantment < armor < 50:
+            if self.heavyenchantment < durability <60:
+                print("You use a enchanting crystal on your heavy armor you feel more protected.")
+
+
+class lightarmor(armor):
+    def __init__(self, enchantment, heavyenchantment, durability, fastmovement,):
+        super(lightarmor, self).__init__(enchantment, heavyenchantment, durability, fastmovement,)
+        if self.durability < 50:
+            if self.fastmovement < 50:
+                print("You put on the light armor you feel you can run forever but also feel very open to attacks")
+
+
+class enchant1(lightarmor):
+    def __init__(self, enchantment, heavyenchantment, durability, slowmovement,):
+        super(enchant1, self).__init__(enchantment, heavyenchantment, durability, slowmovement,)
+        if self.enchantment < armor < 50:
+            if self.heavyenchantment < durability <60:
+                print("You use a enchanting crystal on your heavy armor you feel more protected.")

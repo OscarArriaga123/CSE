@@ -95,5 +95,5 @@ while True:
         except:
             print("You cannot go this way")
 
-    else:
-        print('Command not recognized')
+        else:
+            print('Command not recognized')
