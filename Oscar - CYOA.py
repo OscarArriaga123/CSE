@@ -1,5 +1,5 @@
 class Item(object):
-    def __init__(self, weapon, consumable, armor, micis, name):
+    def __init__(self, weapon, consumable, armor, name):
         self.name = name
         self.weapon = weapon
         self.consumable = consumable
@@ -7,11 +7,11 @@ class Item(object):
 
 
 class Weapon(Item):
-    def __init__(self, longrange, closerange, name, weapondamege, armor, micis):
-        super(Weapon, self).__init__(longrange, closerange, armor, micis, name)
+    def __init__(self, longrange, closerange, name, weapondamage, armor,):
+        super(Weapon, self).__init__(longrange, closerange, armor, name)
         self.closerange = closerange
         self.longrange = longrange
-        self.weapondamege = weapondamege
+        self.weapondamage = weapondamage
         self.name = name
 
 
@@ -60,14 +60,14 @@ class Healthpot(Consumable):
         if self.Health < 10:
             print("You drink a healthpot you feel good and go back into the fight")
 
-    def Regenpot(self):
+    def regenpot(self):
         if self.Health < 30:
             print("You pop the lid of the pot and chug the position you feel good")
 
 
 class Meat(Consumable):
     def __init__(self, Health, Regeneration, Stamina, ):
-        super(Meat, self).__init__(Health, Regeneration, Stamina, )
+        super(Meat, self).__init__(Health, Regeneration, Stamina,)
         if self.Health < 5:
             if self.Stamina < 70:
                 print("You eat the meat until there was bone you feel you can run around the whole island in"
@@ -76,14 +76,14 @@ class Meat(Consumable):
 
 class Speedpot(Consumable):
     def __init__(self, Stamina):
-        super(Speedpot, self).__init__(Stamina, Speedpot, )
+        super(Speedpot, self).__init__(Stamina, Speedpot,)
         if self.Stamina < 20:
             print("You drink the potion your hands start to vibrate rapidly you feel you can outrun a lighting bolt")
 
 
 class Strengthpot(Consumable):
     def __init__(self, CarryMoreWeapons, ):
-        super(Strengthpot, self).__init__("Maxhealth", "Stamina", )
+        super(Strengthpot, self).__init__("Maxhealth", "Stamina",)
         self.CarryMoreWeapons = CarryMoreWeapons
         if self.MaxHealth < 50:
             if self.CarryMoreWeapons < 2:
@@ -174,8 +174,11 @@ class Character(object):
         self.posion = self.health < - 5
         self.regeneratehealth = self.health < 20
 
-    def dialouge(self):
+    def dialouge(self, room, forest, corner):
         self.inspect = self.room, self.forest, self.corner
+        self.room = room
+        self.forest = forest
+        self.corner = corner
         print("There's a object here of use in this area say's a odd voice in your head")
 
 
@@ -258,9 +261,8 @@ short_directions = ['n', 's', 'e', 'w']
 
 while True:
     print(current_node["SOUTHBEACH"])
-    print(current_node["You wake up felling very lite headed to the south is the ocean"
-                       "to the west is a thick tree line to the north is a illuminating "
-                       "green light in a bush."])
+    print(current_node["You wake up felling very lite headed to the south is the ocean to the west is a thick tree line"
+                       "to the north is a illuminating green light in a bush."])
     command = input('>_').lower()
     if command == 'quit':
         quit(0)
