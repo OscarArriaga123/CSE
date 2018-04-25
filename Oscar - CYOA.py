@@ -82,11 +82,11 @@ class Speedpot(Consumable):
 
 
 class Strengthpot(Consumable):
-    def __init__(self, CarryMoreWeapons, ):
+    def __init__(self, carrymoreweapons, ):
         super(Strengthpot, self).__init__("Maxhealth", "Stamina",)
-        self.CarryMoreWeapons = CarryMoreWeapons
+        self.carrymoreweapons = carrymoreweapons
         if self.MaxHealth < 50:
-            if self.CarryMoreWeapons < 2:
+            if self.carrymoreweapons < 2:
                 if self.Stamina < 2:
                     print("You drink the potion you fall to your kneels from a surging pain coming from your hart you"
                           "wait until the pain goes away then you feel strong like you can lift the world")
@@ -139,13 +139,20 @@ class enchant1(lightarmor):
 
 
 class Character(object):
-    def __init__(self, takedamage, attack, health, dialogue, statseffect, regeneratehealth):
+    def __init__(self, takedamage, attack, health, dialogue, statseffect, regeneratehealth, criticalhit, posion,
+                 inspect, room, forest, corner,):
         self.takedamage = takedamage
         self.attack = attack
         self.dialogue = dialogue
         self.health = health
         self.statseffect = statseffect
         self.regeneratehealth = regeneratehealth
+        self.criticalhit = criticalhit
+        self.posion = posion
+        self.inspect = inspect
+        self.room = room
+        self.forest = forest
+        self.corner = corner
 
     def attack(self):
         if self.attack < 12:
