@@ -17,14 +17,14 @@ class Weapon(Item):
 
 class Bow(Weapon):
     def __init__(self, longrange, weapondamage, name, ):
-        super(Bow, self).__init__(longrange, name, )
+        super(Bow, self).__init__(longrange, name, weapondamage, armor)
         self.weapondamage = weapondamage
         self.name = name
 
     def name(self):
         print("Archers Bow")
 
-    def weapondamge(self):
+    def weapondamage(self):
         if self.weapondamage < 5:
             print()
 
@@ -55,7 +55,7 @@ class Consumable(Item):
 
 
 class Healthpot(Consumable):
-    def __init__(self, Health, Healthpot, ):
+    def __init__(self, Health, Healthpot,):
         super(Healthpot, self).__init__(Health, )
         if self.Health < 10:
             print("You drink a healthpot you feel good and go back into the fight")
@@ -107,7 +107,7 @@ class armor(Item):
 
 class heavyarmor(armor):
     def __init__(self, enchantment, heavyenchantment, slowmovement, durability, ):
-        super(heavyarmor, self).__init__(enchantment, heavyenchantment, slowmovement, durability, )
+        super(heavyarmor, self).__init__(enchantment, heavyenchantment, slowmovement, durability,)
         if self.durability < 100:
             if self.slowmovement < 50:
                 print("You put on the heavy armor when you take your first step it's slow and heavy but you feel while"
