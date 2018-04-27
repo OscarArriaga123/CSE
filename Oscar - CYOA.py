@@ -16,7 +16,7 @@ class Weapon(Item):
 
 
 class Bow(Weapon):
-    def __init__(self, longrange, weapondamage, name, ):
+    def __init__(self, longrange, weapondamage, name,):
         super(Bow, self).__init__(longrange, name, weapondamage, armor)
         self.weapondamage = weapondamage
         self.name = name
