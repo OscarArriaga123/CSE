@@ -17,7 +17,7 @@ class Weapon(Item):
 
 class Bow(Weapon):
     def __init__(self, longrange, weapondamage, name,):
-        super(Bow, self).__init__(longrange, name, weapondamage, armor)
+        super(Bow, self).__init__(longrange, name, weapondamage, armor, )
         self.weapondamage = weapondamage
         self.name = name
 
@@ -31,7 +31,7 @@ class Bow(Weapon):
 
 class Sword(Weapon):
     def __init__(self, closerange, name, weapondamage):
-        super(Sword, self).__init__(closerange, name, weapondamage, )
+        super(Sword, self).__init__(closerange, name, weapondamage, armor,)
 
     def name(self):
         print("Great Toothed Sword ")
@@ -42,8 +42,9 @@ class Sword(Weapon):
 
 
 class Consumable(Item):
-    def __init__(self, Healthpot, Regenpot, Meat, Speeedpot, Strengthpot, Health, Stamina, MaxHealth):
-        super(Consumable, self).__init__()
+    def __init__(self, Healthpot, Regenpot, Meat, Speeedpot, Strengthpot, Health, Stamina, MaxHealth, weapon,
+                 consumable, armor, name):
+        super(Consumable, self).__init__(weapon,consumable, armor,name,)
         self.Healthpot = Healthpot
         self.Regenpot = Regenpot
         self.Meat = Meat
