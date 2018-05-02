@@ -16,8 +16,8 @@ class Weapon(Item):
 
 
 class Bow(Weapon):
-    def __init__(self, longrange, weapondamage, name,):
-        super(Bow, self).__init__(longrange, name, weapondamage, armor, )
+    def __init__(self, longrange, weapondamage, name, closerange):
+        super(Bow, self).__init__(longrange, name, weapondamage, armor, closerange)
         self.weapondamage = weapondamage
         self.name = name
 
@@ -30,8 +30,8 @@ class Bow(Weapon):
 
 
 class Sword(Weapon):
-    def __init__(self, closerange, name, weapondamage):
-        super(Sword, self).__init__(closerange, name, weapondamage, armor,)
+    def __init__(self, closerange, name, weapondamage, longrange):
+        super(Sword, self).__init__(closerange, name, weapondamage, armor, longrange)
 
     def name(self):
         print("Great Toothed Sword ")
@@ -42,53 +42,53 @@ class Sword(Weapon):
 
 
 class Consumable(Item):
-    def __init__(self, Healthpot, Regenpot, Meat, Speeedpot, Strengthpot, Health, Stamina, MaxHealth, weapon,
+    def __init__(self, healthpot, Regenpot, Meat, Speeedpot, Strengthpot, health, stamina, MaxHealth, weapon,
                  consumable, armor, name):
         super(Consumable, self).__init__(weapon,consumable, armor,name,)
-        self.Healthpot = Healthpot
+        self.healthpot = healthpot
         self.Regenpot = Regenpot
         self.Meat = Meat
         self.Speedpot = Speeedpot
         self.Strengthpot = Strengthpot
-        self.Health = Health
-        self.Stamina = Stamina
+        self.health = health
+        self.stamina = stamina
         self.MaxHealth = MaxHealth
 
 
-class Healthpot(Consumable):
-    def __init__(self, Health, Healthpot,):
-        super(Healthpot, self).__init__(Health, )
-        if self.Health < 10:
+class healthpot(Consumable):
+    def __init__(self, health, healthpot,):
+        super(healthpot, self).__init__(health,)
+        if self.health < 10:
             print("You drink a healthpot you feel good and go back into the fight")
 
     def regenpot(self):
-        if self.Health < 30:
+        if self.health < 30:
             print("You pop the lid of the pot and chug the position you feel good")
 
 
 class Meat(Consumable):
-    def __init__(self, Health, Regeneration, Stamina, ):
-        super(Meat, self).__init__(Health, Regeneration, Stamina,)
-        if self.Health < 5:
-            if self.Stamina < 70:
+    def __init__(self, health, regeneration, stamina, ):
+        super(Meat, self).__init__(health, regeneration, stamina,)
+        if self.health < 5:
+            if self.stamina < 70:
                 print("You eat the meat until there was bone you feel you can run around the whole island in"
                       "two seconds.")
 
 
 class Speedpot(Consumable):
-    def __init__(self, Stamina):
-        super(Speedpot, self).__init__(Stamina, Speedpot,)
-        if self.Stamina < 20:
+    def __init__(self, stamina):
+        super(Speedpot, self).__init__(stamina, Speedpot,)
+        if self.stamina < 20:
             print("You drink the potion your hands start to vibrate rapidly you feel you can outrun a lighting bolt")
 
 
 class Strengthpot(Consumable):
     def __init__(self, carrymoreweapons, ):
-        super(Strengthpot, self).__init__("Maxhealth", "Stamina",)
+        super(Strengthpot, self).__init__("Maxhealth", "stamina",)
         self.carrymoreweapons = carrymoreweapons
         if self.MaxHealth < 50:
             if self.carrymoreweapons < 2:
-                if self.Stamina < 2:
+                if self.stamina < 2:
                     print("You drink the potion you fall to your kneels from a surging pain coming from your hart you"
                           "wait until the pain goes away then you feel strong like you can lift the world")
 
@@ -124,7 +124,7 @@ class enchant(heavyarmor):
 
 
 class lightarmor(armor):
-    def __init__(self, enchantment, heavyenchantment, durability, fastmovement, ):
+    def __init__(self, enchantment, heavyenchantment, durability, fastmovement,):
         super(lightarmor, self).__init__(enchantment, heavyenchantment, durability, fastmovement, )
         if self.durability < 50:
             if self.fastmovement < 50:
