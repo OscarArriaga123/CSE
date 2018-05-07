@@ -1,10 +1,9 @@
 class Item(object):
     def __init__(self, weapon, consumable, armor, name):
-        self.name = name
         self.weapon = weapon
         self.consumable = consumable
         self.armor = armor
-
+        self.name = name
 
 class Weapon(Item):
     def __init__(self, longrange, closerange, name, weapondamage, armor,):
@@ -205,15 +204,15 @@ class Room(object):
 
 
 # Initialize Rooms
-SOUTHBEACH = Room("South Beach", "NORTHGREENLIGHT", "SOUTHOCEAN", "WESTTREELINE", None,
+SouthBeach = Room("SouthBeach", "NorthGreenLight", "SOUTHOCEAN", "WESTTREELINE", None,
                   "You wake up felling very lite headed to the south is the ocean to the west is a thick tree line to "
                   "the north is a illuminating green light in a bush.")
-NORTHGREENLIGHT = Room("North Green Light", "NORTHSHACK", None, None, None,
+NorthGreenLight = Room("NorthGreenLight", "NORTHSHACK", None, None, None,
                        "You walk towards a the green light surrounded by bushes you push them to the side its a bach of"
                        "bright green eggs to the north is a shack on top of a hill.")
 NORTHSHACK = Room("North Shack", None, "NORTHGREENLIGHT", None, None,
                   "Your inside the you hear something loud roar outside the shack you look outside the window to see a"
-                  "giant monster covered in fur with sharp teeth and with red skin.")
+                  "giant monster covered in fur with sharp teeth and red skin the only way to go is back.")
 WESTTREELINE = Room("West Tree Line", "FORESTNORTH", "SOUTHBEACH", None, None,
                     "You walk towards the trees and having the feeling that your being watched to the north is more of "
                     "the forest and to the east if the same.")
@@ -261,30 +260,25 @@ CAVERNHALLWAY = Room("Cavern Hallway", None, None, None, "CAVERNINTERSECTIONEAST
                      "still has the sting mark form that monster you question yourself for a second saying how did"
                      "i get on this island anyway you stand up having the determination you will make it off the"
                      "island")
+CAVERNEXIT = Room("Cavern Exit", "ABANDONEDTOWN", None, None, None,
+                  "You turn the corner you see and see ")
 
-current_node = world_map = {"South Beach"}
+current_node = SouthBeach
 print(current_node)
-directions = ['NORTH', 'SOUTH', 'EAST', 'WEST']
-short_directions = ['n', 's', 'e', 'w']
+directions = ['north', 'south', 'east', 'west']
+short_direction = ['n', 's', 'e', 'w']
 
 while True:
-    print(current_node["SOUTHBEACH"])
-    print(current_node["You wake up felling very lite headed to the south is the ocean to the west is a thick tree line"
-                       "to the north is a illuminating green light in a bush."])
+    print(current_node.name)
+    print(current_node.description)
     command = input('>_').lower()
     if command == 'quit':
         quit(0)
-    elif command in short_directions:
-        # Look for which command we typed in
-        pos = short_directions.index(command)
-        # Change the command to be the long form
+    elif command in short_direction:
+        pos = short_direction.index(command)
         command = directions[pos]
     if command in directions:
         try:
-            name_of_node = current_node['PATHS'][command]
-            current_node = world_map["SOUTHBEACH"]
-        except:
+            current_node.move(command)
+        except KeyError:
             print("You cannot go this way")
-
-        else:
-            print('Command not recognized')
