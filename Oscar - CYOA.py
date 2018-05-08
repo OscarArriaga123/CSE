@@ -1,10 +1,23 @@
 class Item(object):
-    def __init__(self, weapon, consumable, armor, name):
+    def __init__(self, weapon, consumable, armor, name, egg):
         self.weapon = weapon
         self.consumable = consumable
         self.armor = armor
         self.name = name
+        self.egg = egg
 
+
+class egg(Item):
+    def __init__(self, crackegg, takeegg,):
+        super(egg, self).__init__(armor, consumable, name, egg, takeegg)
+        self.crackegg = crackegg
+        self.takeegg = takeegg
+        
+    def crackegg (self):
+        print("You crack the egg open you can see the baby animal inside you can hear something loud roar in the"
+              "background already knowing it has the intent to kill.")
+        
+        
 class Weapon(Item):
     def __init__(self, longrange, closerange, name, weapondamage, armor,):
         super(Weapon, self).__init__(longrange, closerange, armor, name)
@@ -204,12 +217,12 @@ class Room(object):
 
 
 # Initialize Rooms
-SouthBeach = Room("SouthBeach", "NorthGreenLight", "SOUTHOCEAN", "WESTTREELINE", None,
+SouthBeach = Room("SouthBeach", "NorthGreenLight", None, "WESTTREELINE", None,
                   "You wake up felling very lite headed to the south is the ocean to the west is a thick tree line to "
                   "the north is a illuminating green light in a bush.")
-NorthGreenLight = Room("NorthGreenLight", "NORTHSHACK", None, None, None,
-                       "You walk towards a the green light surrounded by bushes you push them to the side its a bach of"
-                       "bright green eggs to the north is a shack on top of a hill.")
+NorthGreenLight = Room("NorthGreenLight", "NORTHSHACK", "SouthBeach", None, None,
+                       "You walk towards a the green light surrounded by bushes you push them to the side its a bach "
+                       "of bright green eggs to the north is a shack on top of a hill.")
 NORTHSHACK = Room("North Shack", None, "NORTHGREENLIGHT", None, None,
                   "Your inside the you hear something loud roar outside the shack you look outside the window to see a"
                   "giant monster covered in fur with sharp teeth and red skin the only way to go is back.")
@@ -261,7 +274,11 @@ CAVERNHALLWAY = Room("Cavern Hallway", None, None, None, "CAVERNINTERSECTIONEAST
                      "i get on this island anyway you stand up having the determination you will make it off the"
                      "island")
 CAVERNEXIT = Room("Cavern Exit", "ABANDONEDTOWN", None, None, None,
-                  "You turn the corner you see and see ")
+                  "You turn the corner you see the exit and feeling happy you made it out as soon as you come out side"
+                  "you spot a abandoned town to the north you realize you could find supplies to heal your wounds from"
+                  "your last battle.")
+
+ABANDONEDTOWN = Room("Abandoned Town", "FEVERSWAP", )
 
 current_node = SouthBeach
 print(current_node)
