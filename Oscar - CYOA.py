@@ -8,19 +8,19 @@ class Item(object):
 
 
 class egg(Item):
-    def __init__(self, crackegg, takeegg,):
+    def __init__(self, crackegg, takeegg, consumable, name):
         super(egg, self).__init__(armor, consumable, name, egg, takeegg)
         self.crackegg = crackegg
         self.takeegg = takeegg
         
-    def crackegg (self):
+    def crackegg(self):
         print("You crack the egg open you can see the baby animal inside you can hear something loud roar in the"
               "background already knowing it has the intent to kill.")
         
         
 class Weapon(Item):
     def __init__(self, longrange, closerange, name, weapondamage, armor,):
-        super(Weapon, self).__init__(longrange, closerange, armor, name)
+        super(Weapon, self).__init__(longrange, closerange, armor, name, egg)
         self.closerange = closerange
         self.longrange = longrange
         self.weapondamage = weapondamage
@@ -56,7 +56,7 @@ class Sword(Weapon):
 class Consumable(Item):
     def __init__(self, healthpot, Regenpot, Meat, Speeedpot, Strengthpot, health, stamina, MaxHealth, weapon,
                  consumable, armor, name):
-        super(Consumable, self).__init__(weapon,consumable, armor,name,)
+        super(Consumable, self).__init__(weapon,consumable, armor,name, egg)
         self.healthpot = healthpot
         self.Regenpot = Regenpot
         self.Meat = Meat
@@ -107,7 +107,7 @@ class Strengthpot(Consumable):
 
 class armor(Item):
     def __init__(self, heavyarmor, lightarmor, durability, enchantment, heavyenchantment, slowmovement, fastmovement,
-                 armor, ):
+                 armor):
         super(armor, self).__init__()
         self.heavyarmor = heavyarmor
         self.lightarmor = lightarmor
@@ -277,9 +277,17 @@ CAVERNEXIT = Room("Cavern Exit", "ABANDONEDTOWN", None, None, None,
                   "You turn the corner you see the exit and feeling happy you made it out as soon as you come out side"
                   "you spot a abandoned town to the north you realize you could find supplies to heal your wounds from"
                   "your last battle.")
-
-ABANDONEDTOWN = Room("Abandoned Town", "FEVERSWAP", )
-
+ABANDONEDTOWN = Room("Abandoned Town", "FEVERSWAP", None, None, None,
+                     "You walk into the town you feel a presents that your not in the town alone you look at a window"
+                     "of a destroyed houses for a split second you saw a white figure starring right back at you, you"
+                     "stop for a second looking around waiting for monsters to attack but nothing came once you"
+                     "reached the towns center to heal you wounds once you are done you spot a swap to the north.")
+FEVERSWAP = Room("Fever Swap", None, None, None, "ABANDONEDDOCKS",
+                 "")
+ABANDONEDDOCKS = Room("Abandoned Docks", None, None, "WOODENBOAT",None ,
+                      "")
+WOODENBOAT = Room("Wooden Boat", None, None, None, None,
+                  "")
 current_node = SouthBeach
 print(current_node)
 directions = ['north', 'south', 'east', 'west']
