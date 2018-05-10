@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/Oscar - CYOA.py" line="285" />
+    <bookmark url="file://$PROJECT_DIR$/Oscar - CYOA.py" line="286" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb6a0395-0c0b-4ff6-b8dc-d7831963aa5c" name="Default" comment="" />
@@ -57,8 +57,8 @@
       <file leaf-file-name="Oscar - CYOA.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Oscar - CYOA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="290" column="25" lean-forward="true" selection-start-line="290" selection-start-column="25" selection-end-line="290" selection-end-column="25" />
+            <state relative-caret-position="426">
+              <caret line="289" column="49" lean-forward="false" selection-start-line="289" selection-start-column="49" selection-end-line="289" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -117,8 +117,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -130,6 +128,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -292,7 +292,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -653,8 +653,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Oscar - CYOA.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="290" column="25" lean-forward="true" selection-start-line="290" selection-start-column="25" selection-end-line="290" selection-end-column="25" />
+        <state relative-caret-position="426">
+          <caret line="289" column="49" lean-forward="false" selection-start-line="289" selection-start-column="49" selection-end-line="289" selection-end-column="49" />
           <folding />
         </state>
       </provider>
