@@ -238,13 +238,13 @@ MOUNTAINNORTH = Room("North Mountain", None, None, None, "FORESTEAST", None,
                      "sword to the left east is more trees.")
 FORESTEAST = Room("Forest East", "WYVERNNEST", None, "WESTTREELINE", None, None,
                   "You head towards the trees once again you see a huge foot print about 20 miters across you fallow "
-                  "the trail for a few seconds until you notice the trail heads north towards the very top"
-                  "of the mountain.")
+                  "the trail for a few seconds until you notice the trail heads north towards the very top "
+                  " of the mountain.")
 WYVERNNEST = Room("Wyvern Nest", None, None, None, "ENDLESSCAVERNEAST", None,
                   "You climb up the mountain you meracuesly make it to the top you see huge pills of bones with a huge"
                   "monster to the side covered in green scales head to toe with fearsome teeth and serrated claws and"
                   "with an enormous wing span it spots you")
-ENDLESSCAVERNEAST = Room("The EndLess Cavern", "CAVERNENTRANCENORTH", None, None, None, None,
+ENDLESSCAVERNEAST = Room("The EndLess Cavern", "CAVERNENTERENCENORTH", None, None, None, None,
                          "You side down the mountain as quickly as possible trying to avoid all the rocks on the way"
                          "down you come to a quick stop when you suddenly end up in a cavern lite up with torches you"
                          "see an entrance to the cavern that leads north.")
@@ -283,11 +283,20 @@ ABANDONEDTOWN = Room("Abandoned Town", "FEVERSWAP", None, None, None, None,
                      "of a destroyed houses for a split second you saw a white figure starring right back at you, you"
                      "stop for a second looking around waiting for monsters to attack but nothing came once you"
                      "reached the towns center to heal you wounds once you are done you spot a swap to the north.")
-FEVERSWAP = Room("Fever Swap", None, None, None, "ABANDONEDDOCKS",
+FEVERSWAP = Room("Fever Swap", None, None, None, None, "Fight",
                  "You walk into the swap feel sick when you took one step into the water you walked threw the swap"
                  "feeling something is moving underneath you, you spot a huge snake like animal with three heads and"
                  "fangs the size of your sword you prepare for battle.")
-ANACONDAFIGHT = Room("Anaconda Fight", None, None)
+ANACONDAFIGHT = Room("Anaconda Fight", None, None, None, None, "Attack",
+                     "You feel intimidated with all of the three heads looking back at you one snake head"
+                     "strikes you evade it another head follows up from the attack striking you on you left arm you use"
+                     "the hilt of your sword to knock it back the last head strikes showing it's poisons fangs but you"
+                     "doge the attack you get ready for you attack")
+Attack = Room("Attack", None, None, None, "ABANDONEDDOCKS", None,
+              "As soon you were about to charge the snake you noticed a blue gem in the center of it's chest you assume"
+              "it's a weak spot you so charge into the snake with your sword pointing towards the gem you penetrate"
+              "the snake with in a second the snake turned into dust you look around and see a docks not to far from"
+              "you")
 ABANDONEDDOCKS = Room("Abandoned Docks", None, None, "WOODENBOAT", None, None,
                       "")
 WOODENBOAT = Room("Wooden Boat", None, None, None, None, None,
