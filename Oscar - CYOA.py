@@ -226,84 +226,98 @@ NorthGreenLight = Room("North Green Light", "NORTHSHACK", "SouthBeach", None, No
                        "You walk towards a the green light surrounded by bushes you push them to the side its a bach "
                        "of bright green eggs to the north is a shack on top of a hill.", None)
 NORTHSHACK = Room("North Shack", None, "NorthGreenLight", None, None, None,
-                  "Your inside the you hear something loud roar outside the shack you look outside the window to see a"
+                  "Your inside the you hear something loud roar outside the shack you look outside the window to see a "
                   "giant monster covered in fur with sharp teeth and red skin the only way to go is back.", None)
 WESTTREELINE = Room("West Tree Line", "FORESTNORTH", "SOUTHBEACH", None, None, None,
                     "You walk towards the trees and having the feeling that your being watched to the north is more of "
                     "the forest and to the east if the same.", None)
 FORESTNORTH = Room("Forest North", "MOUNTAINNORTH", "WESTTREELINE", None, None, None,
-                   "You head north once again and see a large mountain you hear loud roar that's coming from the top of"
-                   "the mountain to the north is a bright glow coming from the side of the mountain.", None)
+                   "You head north once again and see a large mountain you hear loud roar that's coming from the top "
+                   "of the mountain to the north is a bright glow coming from the side of the mountain.", None)
 MOUNTAINNORTH = Room("North Mountain", None, None, None, "FORESTEAST", None,
-                     "You walk closer towards the side of the mountain you see a starched skeleton with a retractable"
+                     "You walk closer towards the side of the mountain you see a starched skeleton with a retractable "
                      "sword to the left east is more trees.", None)
 FORESTEAST = Room("Forest East", "WYVERNNEST", None, "WESTTREELINE", None, None,
                   "You head towards the trees once again you see a huge foot print about 20 miters across you fallow "
                   "the trail for a few seconds until you notice the trail heads north towards the very top "
                   " of the mountain.", None)
-WYVERNNEST = Room("Wyvern Nest", None, None, None, "ENDLESSCAVERNEAST", None,
-                  "You climb up the mountain you meracuesly make it to the top you see huge pills of bones with a huge"
-                  "monster to the side covered in green scales head to toe with fearsome teeth and serrated claws and"
-                  "with an enormous wing span it spots you", None)
+WYVERNNEST = Room("Wyvern Nest", None, None, None, "CAVERNEAST", None,
+                  "You climb up the mountain you meracuesly make it to the top you see huge pills of bones with a huge "
+                  "monster to the side covered in green scales head to toe with fearsome teeth and serrated claws and "
+                  "with an enormous wing span it spots you, you grab your sword and ready for battle.", None)
+WYVERNFIGHT = Room("Wyvern Fight", None, None, None, None, "Attack1",
+                   "The wyvern turns to face you it close's its mouth and releases a loud and mighty roar it was so "
+                   "loud your ears started to ring you recover then the wyvern goes in the air then attacks you with "
+                   "it's talons you notice there's a purple substance dripping from it's talons so you avoid it as "
+                   "much as you can the wyvern goes back on the ground and charges a huge fire ball it hit's you in "
+                   "your chest which knocks you back you ready your attack", None)
+ATTACK1 = Room("Attack", None, None, None, None, "Attack2",
+               "You launch your self on the wyvern attacking it's back ripping it's scales off you head to i", None)
 CAVERNEAST = Room("The Cavern", "CAVERNENTERENCENORTH", None, None, None, None,
-                  "You side down the mountain as quickly as possible trying to avoid all the rocks on the way down you"
-                  "come to a quick stop when you suddenly end up in a cavern lite up with torches you see an entrance"
+                  "You side down the mountain as quickly as possible trying to avoid all the rocks on the way down you "
+                  "come to a quick stop when you suddenly end up in a cavern lite up with torches you see an entrance "
                   "to the cavern that leads north.", None)
 CAVERNENTERENCENORTH = Room("Cavern Entrance", None, None, "CAVERNHALLWAYWEST", "CAVERNHALLWAYEAST", None,
-                            "You head towards the door having second thoughts on going in you see to ways to go west"
-                            "were you hear very faint sound of singing to the east your see strange markings on the"
+                            "You head towards the door having second thoughts on going in you see to ways to go west "
+                            "were you hear very faint sound of singing to the east your see strange markings on the "
                             "wall", None)
 CAVERNHALLWAYWEST = Room("Cavern Hallway", "EMPTYROOMNORTH", None, None, None, None,
-                         "You head west you hear the singing getting louder you make it to a door were you see a little"
-                         "girl standing in an empty room singing you notice huge claw markes on the walls ten feet high"
-                         "the little girl spots you the door closes behind you.", None)
+                         "You head west you hear the singing getting louder you make it to a door were you see a "
+                         "little girl standing in an empty room singing you notice huge claw markes on the walls ten "
+                         "feet high the little girl spots you the door closes behind you.", None)
 CAVERNHALLWAYEAST = Room("Cavern Hallway", None, None, "CAVERNHALLWAYWEST", None, None,
-                         "You walk towards the symbol it starts to glow a bright blue color you start to realize what"
+                         "You walk towards the symbol it starts to glow a bright blue color you start to realize what "
                          "the symbol means until you hear a loud roar at the end of the dark hallway the facing your "
                          "back starts to push you towards the dark corner", None)
 EMPTYROOMNORTH = Room("Empty Room Exit", None, None, "CAVERNHALLWAYWEST2", None, None,
-                      "You feel scared realizing that you made it out alive and being scared on what comes next in"
-                      "this deadly cavern that you don't think you will escape to the east is another hallway you have"
+                      "You feel scared realizing that you made it out alive and being scared on what comes next in "
+                      "this deadly cavern that you don't think you will escape to the east is another hallway you have "
                       "a feeling of regret.", None)
 CAVERNHALLWAYWEST2 = Room("Cavern Hallway", None, None, "CAVERNHALLWAY", None, None,
-                          "You walk down the hallway you start to feel very sick and having the feeling that the"
-                          "hallway is getting long with each step you take you feel sharp pain on your right shoulder"
-                          "you pull up your sleave to check its a huge sting mark you realize that its from the monster"
-                          "you fought two minutes ago you pass out from the pain", None)
+                          "You walk down the hallway you start to feel very sick and having the feeling that the "
+                          "hallway is getting long with each step you take you feel sharp pain on your right shoulder "
+                          "you pull up your sleave to check its a huge sting mark you realize that its from the "
+                          "monster you fought two minutes ago you pass out from the pain", None)
 CAVERNHALLWAY = Room("Cavern Hallway", None, None, None, "CAVERNEXITEAST", None,
-                     "You wake up feeling very light headed you take a look at you right shoulder seeing that it"
-                     "still has the sting mark form that monster you question yourself for a second saying how did"
-                     "i get on this island anyway you stand up having the determination you will make it off the"
+                     "You wake up feeling very light headed you take a look at you right shoulder seeing that it "
+                     "still has the sting mark form that monster you question yourself for a second saying how did "
+                     "i get on this island anyway you stand up having the determination you will make it off the "
                      "island", None)
 CAVERNEXITEAST = Room("Cavern Exit", "ABANDONEDTOWN", None, None, None, None,
                       "You turn the corner you see the exit and feeling happy you made it out as soon as you come out "
-                      "side you spot a abandoned town to the north you realize you could find supplies to heal your"
+                      "side you spot a abandoned town to the north you realize you could find supplies to heal your "
                       "wounds from your last battle.", None)
 ABANDONEDTOWN = Room("Abandoned Town", "FEVERSWAP", None, None, None, None,
-                     "You walk into the town you feel a presents that your not in the town alone you look at a window"
-                     "of a destroyed houses for a split second you saw a white figure starring right back at you, you"
-                     "stop for a second looking around waiting for monsters to attack but nothing came once you"
+                     "You walk into the town you feel a presents that your not in the town alone you look at a window "
+                     "of a destroyed houses for a split second you saw a white figure starring right back at you, you "
+                     "stop for a second looking around waiting for monsters to attack but nothing came once you "
                      "reached the towns center to heal you wounds once you are done you spot a swap to the north", None)
 FEVERSWAP = Room("Fever Swap", None, None, None, None, "ANACONDAFIGHT",
-                 "You walk into the swap feel sick when you took one step into the water you walked threw the swap"
-                 "feeling something is moving underneath you, you spot a huge snake like animal with three heads and"
+                 "You walk into the swap feel sick when you took one step into the water you walked threw the swap "
+                 "feeling something is moving underneath you, you spot a huge snake like animal with three heads and "
                  "fangs the size of your sword you prepare for battle.", None)
 ANACONDAFIGHT = Room("Anaconda Fight", None, None, None, None, "Attack",
-                     "You feel intimidated with all of the three heads looking back at you one snake head"
-                     "strikes you evade it another head follows up from the attack striking you on you left arm you use"
-                     "the hilt of your sword to knock it back the last head strikes showing it's poisons fangs but you"
-                     "doge the attack you get ready for you attack", None)
+                     "You feel intimidated with all of the three heads looking back at you one snake head "
+                     "strikes you evade it another head follows up from the attack striking you on you left arm you "
+                     "use the hilt of your sword to knock it back the last head strikes showing it's poisons fangs but "
+                     "you doge the attack you get ready for you attack", None)
 Attack = Room("Attack", None, None, None, "ABANDONEDDOCKS", None,
-              "As soon you were about to charge the snake you noticed a blue gem in the center of it's chest you assume"
-              "it's a weak spot you so charge into the snake with your sword pointing towards the gem you penetrate"
-              "the snake with in a second the snake turned into dust you look around and see a docks not to far from"
-              "you", None)
+              "As soon you were about to charge the snake you noticed a blue gem in the center of it's chest you "
+              "assume it's a weak spot you so charge into the snake with your sword pointing towards the gem you "
+              "penetrate the snake with in a second the snake turned into dust you look around and see a docks not "
+              "to far from you", None)
 ABANDONEDDOCKS = Room("Abandoned Docks", None, None, "WOODENBOAT", None, None,
-                      "You arrive to the docks you stand still and look around you spot a boat you are filled with"
-                      "joy but then a huge troll that appears from the tree's it see's you and say's you will never"
-                      "leave the island and you will not be the last to try and fail ", None)
+                      "You arrive to the docks you stand still and look around you spot a boat you are filled with "
+                      "joy but then a huge troll that appears from the tree's it see's you and say's you will never "
+                      "leave the island and you will not be the last to try and fail you feel overwhelmed with fear "
+                      "but you come to your senses and threw your sword at the trolls eye you look to the east and "
+                      "you see a wooden boat", None)
 WOODENBOAT = Room("Wooden Boat", None, None, None, None, None,
-                  "", None)
+                  "You run towards the boat you unroll the rope connected to the dock when doing this you hear the "
+                  "troll saying you will stay here for the rest of your days he run's towards you he trys to grab the "
+                  "boat but his arm wasn't very long your boat starts to drift far from the beach you look back and "
+                  "see the troll turn around and disappear into the woods you turn back around and you try to find the "
+                  "rower for the boat but no luck you decided to let the boat drift and see were it takes you. ", None)
 current_node = SouthBeach
 print(current_node)
 directions = ['north', 'south', 'east', 'west', 'attack', ]
