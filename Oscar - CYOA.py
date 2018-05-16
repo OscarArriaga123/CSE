@@ -19,7 +19,7 @@ class egg(Item):
         
         
 class Weapon(Item):
-    def __init__(self, longrange, closerange, name, weapondamage, armor,):
+    def __init__(self, longrange, closerange, name, weapondamage, armor):
         super(Weapon, self).__init__(longrange, closerange, armor, name, egg)
         self.closerange = closerange
         self.longrange = longrange
@@ -128,7 +128,7 @@ class heavyarmor(armor):
 
 
 class enchant(heavyarmor):
-    def __init__(self, enchantment, heavyenchantment, durability, slowmovement, ):
+    def __init__(self, enchantment, heavyenchantment, durability, slowmovement):
         super(enchant, self).__init__(enchantment, heavyenchantment, durability, slowmovement, )
         if self.enchantment < armor < 50:
             if self.heavyenchantment < durability < 60:
@@ -144,8 +144,8 @@ class lightarmor(armor):
 
 
 class enchant1(lightarmor):
-    def __init__(self, enchantment, heavyenchantment, durability, slowmovement, ):
-        super(enchant1, self).__init__(enchantment, heavyenchantment, durability, slowmovement, )
+    def __init__(self, enchantment, heavyenchantment, durability, slowmovement):
+        super(enchant1, self).__init__(enchantment, heavyenchantment, durability, slowmovement)
         if self.enchantment < armor < 50:
             if self.heavyenchantment < durability < 60:
                 print("You use a enchanting crystal on your heavy armor you feel more protected.")
@@ -272,11 +272,22 @@ CAVERNENTERENCENORTH = Room("Cavern Entrance", None, None, "CAVERNHALLWAYWEST", 
                             "wall", None, None)
 CAVERNHALLWAYWEST = Room("Cavern Hallway", "EMPTYROOMNORTH", None, None, None, None,
                          "You head west you hear the singing getting louder you make it to a door were you see a "
-                         "little girl standing in an empty room singing you notice huge claw marks on the walls ten "
-                         "feet high the little girl spots you the door closes behind you, you prepare for "
-                         "battle.", None, None)
+                         "little girl standing in an empty room singing you notice huge amounts of webbing on the "
+                         "walls with bones of animals and people hanging from them the little girl spots you the door "
+                         "closes behind you, you prepare for battle.", None, None)
 HUGESPIDERFIGHT = Room("Huge Spider", None, None, None, None, "ATTACK3",
-                       "", None, None)
+                       "The girl starts to transform into a huge spider with huge fangs and multiply eyes all looking "
+                       "at you just looking at the spider gives you gooses bumps the spider suddenly shoots huge "
+                       "webbing at you but misses it jumps on the wall and starts to climb then it gets to a positions "
+                       "when it starts to shot acidic spite from the roof some of it lands on your hand which felt "
+                       "like your hand was in a pool of lava you take your crossbow and steady your aim to take the "
+                       "shot", None, None)
+ATTACK3 = Room("Attack", None, None, None, None, "ATTACK4",
+               "You grab an arrow from your quiver then enchant it to set it aflame but you change your target and "
+               "aimed for the web so the spider can't go on the ceiling again the spider jumps to the ground a bit "
+               "starcked from the fire it's eyes starts to glow red you switched to your sword and chopped two of the "
+               "spiders legs the spider ready's his attack.", None, None)
+ATTACK4 = Room("")
 CAVERNHALLWAYEAST = Room("Cavern Hallway", None, None, "CAVERNHALLWAYWEST", None, None,
                          "You walk towards the symbol it starts to glow a bright blue color you start to realize what "
                          "the symbol means until you hear a loud roar at the end of the dark hallway the wall facing "
