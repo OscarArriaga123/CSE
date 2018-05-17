@@ -19,7 +19,7 @@ class egg(Item):
         
         
 class Weapon(Item):
-    def __init__(self, longrange, closerange, name, weapondamage, armor,):
+    def __init__(self, longrange, closerange, name, weapondamage, armor):
         super(Weapon, self).__init__(longrange, closerange, armor, name, egg)
         self.closerange = closerange
         self.longrange = longrange
@@ -128,7 +128,7 @@ class heavyarmor(armor):
 
 
 class enchant(heavyarmor):
-    def __init__(self, enchantment, heavyenchantment, durability, slowmovement, ):
+    def __init__(self, enchantment, heavyenchantment, durability, slowmovement):
         super(enchant, self).__init__(enchantment, heavyenchantment, durability, slowmovement, )
         if self.enchantment < armor < 50:
             if self.heavyenchantment < durability < 60:
@@ -144,8 +144,8 @@ class lightarmor(armor):
 
 
 class enchant1(lightarmor):
-    def __init__(self, enchantment, heavyenchantment, durability, slowmovement, ):
-        super(enchant1, self).__init__(enchantment, heavyenchantment, durability, slowmovement, )
+    def __init__(self, enchantment, heavyenchantment, durability, slowmovement):
+        super(enchant1, self).__init__(enchantment, heavyenchantment, durability, slowmovement)
         if self.enchantment < armor < 50:
             if self.heavyenchantment < durability < 60:
                 print("You use a enchanting crystal on your heavy armor you feel more protected.")
@@ -266,25 +266,36 @@ CAVERNEAST = Room("The Cavern", "CAVERNENTERENCENORTH", None, None, None, None,
                   "You side down the mountain as quickly as possible trying to avoid all the rocks on the way down you "
                   "come to a quick stop when you suddenly end up in a cavern lite up with torches you see an entrance "
                   "to the cavern that leads north.", None, None)
-CAVERNENTERENCENORTH = Room("Cavern Entrance", None, None, "CAVERNHALLWAYWEST", "CAVERNHALLWAYEAST", None,
-                            "You head towards the door having second thoughts on going in you see to ways to go west "
-                            "were you hear very faint sound of singing to the east your see strange markings on the "
-                            "wall", None, None)
-CAVERNHALLWAYWEST = Room("Cavern Hallway", "EMPTYROOMNORTH", None, None, None, None,
+CAVERNENTERENCENORTH = Room("Cavern Entrance", None, None, "CAVERNHALLWAYWEST", None, None,
+                            "You head towards the door having second thoughts on going in you see one way to go west "
+                            "were you hear very faint sound of singing", None, None)
+CAVERNHALLWAYWEST = Room("Cavern Hallway", None, None, None, None, "HUGESPIDERFIGHT",
                          "You head west you hear the singing getting louder you make it to a door were you see a "
-                         "little girl standing in an empty room singing you notice huge claw marks on the walls ten "
-                         "feet high the little girl spots you the door closes behind you, you prepare for "
-                         "battle.", None, None)
+                         "little girl standing in an empty room singing you notice huge amounts of webbing on the "
+                         "walls with bones of animals and people hanging from them the little girl spots you the door "
+                         "closes behind you, you prepare for battle.", None, None)
 HUGESPIDERFIGHT = Room("Huge Spider", None, None, None, None, "ATTACK3",
-                       "", None, None)
-CAVERNHALLWAYEAST = Room("Cavern Hallway", None, None, "CAVERNHALLWAYWEST", None, None,
-                         "You walk towards the symbol it starts to glow a bright blue color you start to realize what "
-                         "the symbol means until you hear a loud roar at the end of the dark hallway the wall facing "
-                         "your back starts to push you towards the dark corner until it was pict black", None, None)
-EMPTYROOMNORTH = Room("Empty Room Exit", None, None, "CAVERNHALLWAYWEST2", None, None,
-                      "You feel scared realizing that you made it out alive and being scared on what comes next in "
-                      "this deadly cavern that you don't think you will escape to the east is another hallway you have "
-                      "a feeling of regret.", None, None)
+                       "The girl starts to transform into a huge spider with huge fangs and multiply eyes all looking "
+                       "at you just looking at the spider gives you gooses bumps the spider suddenly shoots huge "
+                       "webbing at you but misses it jumps on the wall and starts to climb then it gets to a positions "
+                       "when it starts to shot acidic spite from the roof some of it lands on your hand which felt "
+                       "like your hand was in a pool of lava you take your crossbow and steady your aim to take the "
+                       "shot", None, None)
+ATTACK3 = Room("Attack", None, None, None, None, "ATTACK4",
+               "You grab an arrow from your quiver then enchant it to set it aflame but you change your target and "
+               "aimed for the web so the spider can't go on the ceiling again the spider jumps to the ground a bit "
+               "starched from the fire it's eyes starts to glow red you switched to your sword and chopped two of the "
+               "spiders legs the spider ready's his attack.", None, None)
+ATTACK4 = Room("Attack", "EMPTYROOMEXIT", None, None, None, None,
+               "The spider jumps on top of you then started to tangle you in it's web you are not able to move the "
+               "spider looks up to show it's fangs it goes full force striking you in your shoulder but you felt "
+               "nothing you use your that's inside the webbing to cut threw and striked the spider underneath it then "
+               "the spider releases a loud roar of pain and falls on it's back you stand up being completely out of "
+               "breath you see an exit appear to the north", None, None)
+EMPTYROOMEXIT = Room("Empty Room Exit", None, None, "CAVERNHALLWAYWEST2", None, None,
+                     "You feel scared realizing that you made it out alive and being scared on what comes next in "
+                     "this deadly cavern that you don't think you will escape to the east is another hallway you have "
+                     "a feeling of regret.", None, None)
 CAVERNHALLWAYWEST2 = Room("Cavern Hallway", None, None, "CAVERNHALLWAY", None, None,
                           "You walk down the hallway you start to feel very sick and having the feeling that the "
                           "hallway is getting long with each step you take you feel sharp pain on your right shoulder "
@@ -334,7 +345,7 @@ WOODENBOAT = Room("Wooden Boat", None, None, None, None, None,
                   "you. ", None, None)
 STRIK = Room("Attack", None, None, None, "ABANDONEDDOCKS", None,
              "As soon you were about to charge the snake you noticed a blue gem in the center of it's chest you assume "
-             "it's a weak spot you so charge into the snake with your sword pointing towards the gem you penetrate "
+             "it's a weak spot so charge into the snake with your sword pointing towards the gem you penetrate "
              "the snake with in a second the snake turned into dust you look around and see a docks not to far from "
              "you", None, None)
 
