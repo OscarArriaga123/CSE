@@ -284,6 +284,7 @@ HUGESPIDERFIGHT = Room("Huge Spider", None, None, None, None, "ATTACK3",
 ATTACK3 = Room("Attack", None, None, None, None, "ATTACK4",
                "You grab an arrow from your quiver then enchant it to set it aflame but you change your target and "
                "aimed for the web so the spider can't go on the ceiling again the spider jumps to the ground a bit "
+<<<<<<< HEAD
                "starched from the fire it's eyes starts to glow red you switched to your sword and chopped two of the "
                "spiders legs the spider ready's his attack.", None, None)
 ATTACK4 = Room("Attack", "EMPTYROOMEXIT", None, None, None, None,
@@ -296,6 +297,19 @@ EMPTYROOMEXIT = Room("Empty Room Exit", None, None, "CAVERNHALLWAYWEST2", None, 
                      "You feel scared realizing that you made it out alive and being scared on what comes next in "
                      "this deadly cavern that you don't think you will escape to the east is another hallway you have "
                      "a feeling of regret.", None, None)
+=======
+               "starcked from the fire it's eyes starts to glow red you switched to your sword and chopped two of the "
+               "spiders legs the spider ready's his attack.", None, None)
+ATTACK4 = Room("")
+CAVERNHALLWAYEAST = Room("Cavern Hallway", None, None, "CAVERNHALLWAYWEST", None, None,
+                         "You walk towards the symbol it starts to glow a bright blue color you start to realize what "
+                         "the symbol means until you hear a loud roar at the end of the dark hallway the wall facing "
+                         "your back starts to push you towards the dark corner until it was pict black", None, None)
+EMPTYROOMNORTH = Room("Empty Room Exit", None, None, "CAVERNHALLWAYWEST2", None, None,
+                      "You feel scared realizing that you made it out alive and being scared on what comes next in "
+                      "this deadly cavern that you don't think you will escape to the east is another hallway you have "
+                      "a feeling of regret.", None, None)
+>>>>>>> af87f00a08de79d92c223d1d9479e15279659ae7
 CAVERNHALLWAYWEST2 = Room("Cavern Hallway", None, None, "CAVERNHALLWAY", None, None,
                           "You walk down the hallway you start to feel very sick and having the feeling that the "
                           "hallway is getting long with each step you take you feel sharp pain on your right shoulder "
