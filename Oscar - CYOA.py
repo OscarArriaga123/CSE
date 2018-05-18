@@ -56,7 +56,7 @@ class Sword(Weapon):
 class Consumable(Item):
     def __init__(self, healthpot, Regenpot, Meat, Speeedpot, Strengthpot, health, stamina, MaxHealth, weapon,
                  consumable, armor, name):
-        super(Consumable, self).__init__(weapon,consumable, armor,name, egg)
+        super(Consumable, self).__init__(weapon, consumable, armor, name, egg)
         self.healthpot = healthpot
         self.Regenpot = Regenpot
         self.Meat = Meat
@@ -79,8 +79,9 @@ class healthpot(Consumable):
 
 
 class Meat(Consumable):
-    def __init__(self, health, regeneration, stamina, ):
-        super(Meat, self).__init__(health, regeneration, stamina,)
+    def __init__(self, health, regeneration, stamina, MaxHealth,  Regenpot, name, weapon, consumable):
+        super(Meat, self).__init__(health, regeneration, stamina, MaxHealth, Strengthpot, Regenpot, armor, name,
+                                   weapon, consumable, Meat, Speedpot)
         if self.health < 5:
             if self.stamina < 70:
                 print("You eat the meat until there was bone you feel you can run around the whole island in"
@@ -88,15 +89,17 @@ class Meat(Consumable):
 
 
 class Speedpot(Consumable):
-    def __init__(self, stamina):
-        super(Speedpot, self).__init__(stamina, Speedpot,)
+    def __init__(self, stamina, Regenpot, MaxHealth, weapon, consumable, health, name):
+        super(Speedpot, self).__init__(healthpot, Regenpot, stamina, Meat, Strengthpot, Speedpot, MaxHealth, armor,
+                                       weapon, consumable, health, name)
         if self.stamina < 20:
             print("You drink the potion your hands start to vibrate rapidly you feel you can outrun a lighting bolt")
 
 
 class Strengthpot(Consumable):
-    def __init__(self, carrymoreweapons, ):
-        super(Strengthpot, self).__init__("Maxhealth", "stamina",)
+    def __init__(self, carrymoreweapons, MaxHealth, stamina, health, consumable, name, weapon):
+        super(Strengthpot, self).__init__(MaxHealth, stamina, health, Speedpot, Strengthpot, armor, consumable, name,
+                                          weapon, Meat, carrymoreweapons, healthpot)
         self.carrymoreweapons = carrymoreweapons
         if self.MaxHealth < 50:
             if self.carrymoreweapons < 2:
@@ -119,8 +122,9 @@ class armor(Item):
 
 
 class heavyarmor(armor):
-    def __init__(self, enchantment, heavyenchantment, slowmovement, durability, ):
-        super(heavyarmor, self).__init__(enchantment, heavyenchantment, slowmovement, durability,)
+    def __init__(self, enchantment, heavyenchantment, slowmovement, durability, fastmovement):
+        super(heavyarmor, self).__init__(enchantment, heavyenchantment, slowmovement, durability, armor, slowmovement,
+                                         fastmovement, heavyarmor)
         if self.durability < 100:
             if self.slowmovement < 50:
                 print("You put on the heavy armor when you take your first step it's slow and heavy but you feel while"
@@ -128,24 +132,25 @@ class heavyarmor(armor):
 
 
 class enchant(heavyarmor):
-    def __init__(self, enchantment, heavyenchantment, durability, slowmovement):
-        super(enchant, self).__init__(enchantment, heavyenchantment, durability, slowmovement, )
+    def __init__(self, enchantment, heavyenchantment, durability, slowmovement, fastmovement):
+        super(enchant, self).__init__(enchantment, heavyenchantment, durability, slowmovement, fastmovement)
         if self.enchantment < armor < 50:
             if self.heavyenchantment < durability < 60:
                 print("You use a enchanting crystal on your heavy armor you feel more protected.")
 
 
 class lightarmor(armor):
-    def __init__(self, enchantment, heavyenchantment, durability, fastmovement,):
-        super(lightarmor, self).__init__(enchantment, heavyenchantment, durability, fastmovement, )
+    def __init__(self, enchantment, heavyenchantment, durability, fastmovement, slowmovement):
+        super(lightarmor, self).__init__(enchantment, heavyenchantment, durability, fastmovement, armor, fastmovement,
+                                    slowmovement, lightarmor)
         if self.durability < 50:
             if self.fastmovement < 50:
                 print("You put on the light armor you feel you can run forever but also feel very open to attacks")
 
 
 class enchant1(lightarmor):
-    def __init__(self, enchantment, heavyenchantment, durability, slowmovement):
-        super(enchant1, self).__init__(enchantment, heavyenchantment, durability, slowmovement)
+    def __init__(self, enchantment, heavyenchantment, durability, slowmovement, fastmovement):
+        super(enchant1, self).__init__(enchantment, heavyenchantment, durability, fastmovement, slowmovement)
         if self.enchantment < armor < 50:
             if self.heavyenchantment < durability < 60:
                 print("You use a enchanting crystal on your heavy armor you feel more protected.")
@@ -284,9 +289,8 @@ HUGESPIDERFIGHT = Room("Huge Spider", None, None, None, None, "ATTACK3",
 ATTACK3 = Room("Attack", None, None, None, None, "ATTACK4",
                "You grab an arrow from your quiver then enchant it to set it aflame but you change your target and "
                "aimed for the web so the spider can't go on the ceiling again the spider jumps to the ground a bit "
-<<<<<<< HEAD
-               "starched from the fire it's eyes starts to glow red you switched to your sword and chopped two of the "
-               "spiders legs the spider ready's his attack.", None, None)
+               "starched from the fire it's eyes starts to glow red you switched to your sword and chopped off two of "
+               "it's legs the spider ready's his attack.", None, None)
 ATTACK4 = Room("Attack", "EMPTYROOMEXIT", None, None, None, None,
                "The spider jumps on top of you then started to tangle you in it's web you are not able to move the "
                "spider looks up to show it's fangs it goes full force striking you in your shoulder but you felt "
@@ -297,10 +301,6 @@ EMPTYROOMEXIT = Room("Empty Room Exit", None, None, "CAVERNHALLWAYWEST2", None, 
                      "You feel scared realizing that you made it out alive and being scared on what comes next in "
                      "this deadly cavern that you don't think you will escape to the east is another hallway you have "
                      "a feeling of regret.", None, None)
-=======
-               "starcked from the fire it's eyes starts to glow red you switched to your sword and chopped two of the "
-               "spiders legs the spider ready's his attack.", None, None)
-ATTACK4 = Room("")
 CAVERNHALLWAYEAST = Room("Cavern Hallway", None, None, "CAVERNHALLWAYWEST", None, None,
                          "You walk towards the symbol it starts to glow a bright blue color you start to realize what "
                          "the symbol means until you hear a loud roar at the end of the dark hallway the wall facing "
@@ -309,7 +309,6 @@ EMPTYROOMNORTH = Room("Empty Room Exit", None, None, "CAVERNHALLWAYWEST2", None,
                       "You feel scared realizing that you made it out alive and being scared on what comes next in "
                       "this deadly cavern that you don't think you will escape to the east is another hallway you have "
                       "a feeling of regret.", None, None)
->>>>>>> af87f00a08de79d92c223d1d9479e15279659ae7
 CAVERNHALLWAYWEST2 = Room("Cavern Hallway", None, None, "CAVERNHALLWAY", None, None,
                           "You walk down the hallway you start to feel very sick and having the feeling that the "
                           "hallway is getting long with each step you take you feel sharp pain on your right shoulder "
