@@ -68,7 +68,7 @@ class Consumable(Item):
 
 
 class healthpot(Consumable):
-    def __init__(self, health, healthpot,):
+    def __init__(self, health, healthpot):
         super(healthpot, self).__init__(health,)
         if self.health < 10:
             print("You drink a healthpot you feel good and go back into the fight")
@@ -79,8 +79,8 @@ class healthpot(Consumable):
 
 
 class Meat(Consumable):
-    def __init__(self, health, regeneration, stamina, MaxHealth,  Regenpot, name, weapon, consumable):
-        super(Meat, self).__init__(health, regeneration, stamina, MaxHealth, Strengthpot, Regenpot, armor, name,
+    def __init__(self, health, regeneration, stamina, maxhealth,  regenpot, name, weapon, consumable):
+        super(Meat, self).__init__(health, regeneration, stamina, maxhealth, Strengthpot, regenpot, armor, name,
                                    weapon, consumable, Meat, Speedpot)
         if self.health < 5:
             if self.stamina < 70:
@@ -89,16 +89,16 @@ class Meat(Consumable):
 
 
 class Speedpot(Consumable):
-    def __init__(self, stamina, Regenpot, MaxHealth, weapon, consumable, health, name):
-        super(Speedpot, self).__init__(healthpot, Regenpot, stamina, Meat, Strengthpot, Speedpot, MaxHealth, armor,
+    def __init__(self, stamina, regenpot, maxhealth, weapon, consumable, health, name):
+        super(Speedpot, self).__init__(healthpot, regenpot, stamina, Meat, Strengthpot, Speedpot, maxhealth, armor,
                                        weapon, consumable, health, name)
         if self.stamina < 20:
             print("You drink the potion your hands start to vibrate rapidly you feel you can outrun a lighting bolt")
 
 
 class Strengthpot(Consumable):
-    def __init__(self, carrymoreweapons, MaxHealth, stamina, health, consumable, name, weapon):
-        super(Strengthpot, self).__init__(MaxHealth, stamina, health, Speedpot, Strengthpot, armor, consumable, name,
+    def __init__(self, carrymoreweapons, maxhealth, stamina, health, consumable, name, weapon):
+        super(Strengthpot, self).__init__(maxhealth, stamina, health, Speedpot, Strengthpot, armor, consumable, name,
                                           weapon, Meat, carrymoreweapons, healthpot)
         self.carrymoreweapons = carrymoreweapons
         if self.MaxHealth < 50:
@@ -208,7 +208,7 @@ class Character(object):
 
 
 class Room(object):
-    def __init__(self, name, north, south, west, east, attack, desc, items, grabitem):
+    def __init__(self, name, north, south, west, east, attack, desc, item, grabitem):
         self.name = name
         self.north = north
         self.south = south
@@ -216,7 +216,7 @@ class Room(object):
         self.east = east
         self.attack = attack
         self.description = desc
-        self.items = items
+        self.item = item
         self.grabitem = grabitem
 
     def move(self, direction):
@@ -333,7 +333,7 @@ FEVERSWAP = Room("Fever Swap", None, None, None, None, "ANACONDAFIGHT",
                  "You walk into the swap feel sick when you took one step into the water you walked threw the swap "
                  "feeling something is moving underneath you, you spot a huge snake like animal with three heads and "
                  "fangs the size of your sword you prepare for battle.", None, None)
-ANACONDAFIGHT = Room("Anaconda Fight", None, None, None, None, "STRIK",
+ANACONDAFIGHT = Room("Anaconda Fight", None, None, None, None, "Attack",
                      "You feel intimidated with all of the three heads looking back at you one snake head "
                      "strikes you evade it another head follows up from the attack striking you on you left arm you "
                      "use the hilt of your sword to knock it back the last head strikes showing it's poisons fangs but "
@@ -351,16 +351,11 @@ ABANDONEDDOCKS = Room("Abandoned Docks", None, None, "WOODENBOAT", None, None,
                       "you see a wooden boat", None, None)
 WOODENBOAT = Room("Wooden Boat", None, None, None, None, None,
                   "You run towards the boat you unroll the rope connected to the dock when doing this you hear the "
-                  "troll saying you will stay here for the rest of your days he run's towards you he trys to grab the "
+                  "troll saying you will stay here for the rest of your days he run's towards you he try's to grab the "
                   "boat but his arm wasn't very long your boat starts to drift far from the beach you look back and "
                   "see the troll turn around and disappear into the woods you turn back around and you try to find the "
                   "rower for the boat but no luck you decided to let the boat drift and see were it takes "
                   "you. ", None, None)
-STRIK = Room("Attack", None, None, None, "ABANDONEDDOCKS", None,
-             "As soon you were about to charge the snake you noticed a blue gem in the center of it's chest you assume "
-             "it's a weak spot so charge into the snake with your sword pointing towards the gem you penetrate "
-             "the snake with in a second the snake turned into dust you look around and see a docks not to far from "
-             "you", None, None)
 
 current_node = SouthBeach
 print(current_node)
