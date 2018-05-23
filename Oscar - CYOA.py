@@ -232,8 +232,9 @@ NorthGreenLight = Room("North Green Light", "NORTHSHACK", "SouthBeach", None, No
                        "You walk towards a the green light surrounded by bushes you push them to the side its a bach "
                        "of bright green eggs to the north is a shack on top of a hill.", None, None)
 NORTHSHACK = Room("North Shack", None, "NorthGreenLight", None, None, None,
-                  "Your inside the you hear something loud roar outside the shack you look outside the window to see a "
-                  "giant monster covered in fur with sharp teeth and red skin the only way to go is back.", None, None)
+                  "Your inside the shack you hear something loud roar outside the shack you look outside the window to "
+                  "see a giant monster covered in green fur with sharp teeth and green scales the only way to go is "
+                  "back.", None, None)
 WESTTREELINE = Room("West Tree Line", "FORESTNORTH", "SOUTHBEACH", None, None, None,
                     "You walk towards the trees and having the feeling that your being watched to the north is more of "
                     "the forest and to the east if the same.", None, None)
@@ -277,7 +278,7 @@ CAVERNENTERENCENORTH = Room("Cavern Entrance", None, None, "CAVERNHALLWAYWEST", 
 CAVERNHALLWAYWEST = Room("Cavern Hallway", None, None, None, None, "HUGESPIDERFIGHT",
                          "You head west you hear the singing getting louder you make it to a door were you see a "
                          "little girl standing in an empty room singing you notice huge amounts of webbing on the "
-                         "walls with bones of animals and people hanging from them the little girl spots you the door "
+                         "walls with bones of animals and people hanging from them the little girl sees you the door "
                          "closes behind you, you prepare for battle.", None, None)
 HUGESPIDERFIGHT = Room("Huge Spider", None, None, None, None, "ATTACK3",
                        "The girl starts to transform into a huge spider with huge fangs and multiply eyes all looking "
